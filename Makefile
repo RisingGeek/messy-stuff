@@ -1,6 +1,4 @@
-BINARY_NAME = messy-stuff
-
-build:
-	go build -o ${BINARY_NAME} app/main.go
-run: build
-	./${BINARY_NAME}
+download:
+	go mod download
+run: 
+	nodemon --exec go run app/*.go --signal SIGTERM

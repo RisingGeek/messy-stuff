@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/RisingGeek/messy-stuff/delivery"
+	"messy-stuff/delivery"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
@@ -15,7 +16,8 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Routes
-	e.GET("/", delivery.ChannelInfo)
+	e.GET("/routines", delivery.Routines)
+	e.GET("/channel-info", delivery.ChannelInfo)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8080"))
